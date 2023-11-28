@@ -2,8 +2,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
+    <div className='mx-auto'>
       <h1>My about page</h1>
+
     </div>
   )
 }

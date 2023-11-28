@@ -1,10 +1,9 @@
-// Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
-  FaShoppingCart, 
+  FaShoppingCart,
   FaSearch,
 } from "react-icons/fa";
 import UserDropdown from "./Dropdown";
@@ -33,29 +32,30 @@ const Navbar = () => {
   };
 
   return (
-    <nav id="nav" className="bg-white  fixed w-full p-4">
-      <div className="container mx-auto flex items-center justify-between gap-[30px] ">
+    <nav id="nav" className="bg-white fixed w-full p-2">
+      <div className="container mx-auto flex items-center justify-between gap-[10px]">
         <button
           className="lg:hidden text-black focus:outline-none"
           onClick={toggleNavbar}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
-        <Link to="/" className="text-orange-500 font-bold text-lg">
+        <Link to="/" className="text-orange-500 font-bold text-lg md:ml-8 text-2xl">
           Dukani
         </Link>
         {/* Search input */}
+        <div className="w-full lg:ml-[100px]">
         <input
           type="text"
-          className="py-2 px-4 sm:w-full lg:w-[50%] border bg-slate-300/50  rounded-full shadow-lg"
+          className="py-2 px-4  lg:w-[50%] rounded-full border bg-slate-200"
           placeholder="Search products, categories"
         />
-        <button className="bg-[#a2a8d3] py-2 rounded-full px-9 text-white hidden lg:inline-block">
+        <button className="bg-black rounded py-2 ml-[30px] px-9 text-white hidden hover:bg-slate-600  md:inline-block lg:inline-block">
           Search
         </button>{" "}
-
+        </div>
         {/* User Dropdown */}
-        <div className="relative" onClick={stopPropagation}>
+        <div className="relative " onClick={stopPropagation}>
           <UserDropdown
             isOpen={isUserDropdownOpen}
             toggleUserDropdown={toggleUserDropdown}
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <FaTimes />
               </button>
             </div>
-            <div className="flex flex-col mx-4 justify-center space-y-4 text-center my-6">
+            <div className="flex flex-col  mx-4 justify-center space-y-4 text-center my-6">
               <Link to="/" className="text-white">
                 Home
               </Link>
@@ -86,9 +86,9 @@ const Navbar = () => {
           </div>
         )}
         {/* Cart Icon */}
-        <div className="flex items-center ">
-          <FaShoppingCart className="text-black mx-3 text-[25px] cursor-pointer" />
-          <h4 className="hidden lg:inline-block md:block">Cart</h4>
+        <div className="flex items-center lg:mx-8">
+          <FaShoppingCart className="text-black  text-[20px]  cursor-pointer" />
+          <h4 className="md:block">Cart</h4>
           {/* Add cart count or update logic here */}
         </div>
       </div>

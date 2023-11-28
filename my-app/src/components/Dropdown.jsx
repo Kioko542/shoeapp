@@ -20,23 +20,23 @@ const UserDropdown = ({ isOpen, toggleUserDropdown }) => {
       {/* Dropdown Content */}
       {isOpen && (
         <div
-          className="fixed top-0 right-0 mt-20 text-white bg-gray-800 flex flex-col p-6 justify-center  rounded shadow gap-4"
+          className="fixed top-0 right-0 mt-2 text-white bg-gray-800 flex flex-col p-6 justify-center  rounded shadow gap-4"
           style={{ zIndex: 100 }}
         >
-          <Link to="/signin" className="block px-4 py-2 text-sm">
+          <Link  id='link' to="/signin" className="block px-4 py-2 text-sm hover:bg-slate-200">
             Sign In
           </Link>
-          <Link to="/myaccount" className="block px-4 py-2 text-sm">
+          <Link id='link' to="/myaccount" className="block px-4 py-2 text-sm hover:bg-slate-200">
             My Account
           </Link>
-          <Link to="/orders" className="block px-4 py-2 text-sm">
+          <Link  id='link'to="/orders" className="block px-4 py-2 text-sm hover:bg-slate-200">
             Orders
           </Link>
-          <Link to="/saveditems" className="block px-4 py-2 text-sm">
+          <Link id='link' to="/saveditems" className="block px-4 py-2 text-sm hover:bg-slate-200">
             Saved Items
           </Link>
-          <div className='flex items-center justify-center pb-6'>
-          <FaSignOutAlt />
+          <div className=' sign-out flex items-center justify-center pb-6'>
+          <FaSignOutAlt  />
           <button className="block  text-sm">Logout</button>
 
           </div>
